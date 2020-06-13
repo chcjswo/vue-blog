@@ -3,6 +3,9 @@ import Router from 'vue-router';
 import Home from './components/Home.vue';
 import Project from './components/Project.vue';
 import Detail from './components/Detail.vue';
+import Author from './components/Author.vue';
+import Comment from './components/Comment.vue';
+import NotFound from './components/NotFound.vue';
 
 Vue.use(Router)
 
@@ -24,16 +27,23 @@ export default new Router({
             name: 'detail',
             component: Detail,
             // nested router
-            // children: [
-            //     {
-            //         path: 'author',
-            //         component: Detail
-            //     },
-            //     {
-            //         path: 'comment',
-            //         component: Detail
-            //     }
-            // ]
-        }
+            children: [
+                {
+                    path: 'author',
+                    name: 'author',
+                    component: Author
+                },
+                {
+                    path: 'comment',
+                    name: 'comment',
+                    component: Comment
+                }
+            ]
+        },
+        {
+            path: '*',
+            name: 'notfound',
+            component: NotFound
+        },
     ]
 });

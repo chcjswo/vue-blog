@@ -2,7 +2,9 @@
     <div id="app">
         <div>
             <b-navbar toggleable="lg" type="dark" variant="info">
-                <b-navbar-brand href="#">NavBar</b-navbar-brand>
+                <b-navbar-brand href="#">
+                    <router-link to="/">Home</router-link>
+                </b-navbar-brand>
                 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
                 <b-collapse id="nav-collapse" is-nav>
                     <b-navbar-nav>
@@ -18,7 +20,8 @@
         <!-- 라우터에 설정한 거 여기에 보여준다 -->
         <router-view :posts="posts"></router-view>
 
-        <button v-on:click="$router.push('/detail/0')">버튼</button>
+        <button v-on:click="$router.push('/detail/0/author')">Author</button>
+        <button v-on:click="$router.push('/detail/0/comment')">comment</button>
 
     </div>
 </template>

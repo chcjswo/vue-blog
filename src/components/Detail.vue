@@ -5,6 +5,7 @@
         <p>{{posts[$route.params.id].content}}</p>
         <p>{{posts[$route.params.id].date}}</p>
         <p>{{posts[$route.params.id].number}}</p>
+        <router-view></router-view>
     </div>
 </template>
 
